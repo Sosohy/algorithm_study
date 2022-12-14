@@ -14,7 +14,6 @@ def solution(survey, choices):
     
     values = list(dicType.values())
     keys = list(dicType.keys())
-    print(values)
     for i in range(0, len(dicType), 2):
         m = max(values[i], values[i+1])
         if(dicType[keys[i]] == m):
