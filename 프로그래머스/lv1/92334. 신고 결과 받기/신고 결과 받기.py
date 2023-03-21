@@ -8,9 +8,9 @@ def solution(id_list, report, k):
         dicReport[reportIDs[1]] += 1;
 
     for i in report:
-        reportIDs = i.split(" ");
-        if (dicReport[reportIDs[1]] >= k):
-            dicID[reportIDs[0]] += 1;
+        uID, reID = i.split(" ");
+        if (dicReport[reID] >= k):
+            dicID[uID] += 1;
 
     answer = list(dicID.values());
     return answer
