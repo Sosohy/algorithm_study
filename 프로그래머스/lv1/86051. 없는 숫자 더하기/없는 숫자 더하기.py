@@ -1,7 +1,4 @@
 def solution(numbers):
-    answer = [x for x in range(10)]
+    answer = sum(range(10)) - sum(numbers)
     
-    for i in numbers:
-        answer.remove(i)
-            
-    return sum(answer)
+    return answer
