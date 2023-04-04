@@ -5,7 +5,8 @@ def solution(new_id):
     
     # 2: 문자 제거
     for i in new_id:
-        if (i.isalpha() or i.isdigit()) or (i in spLetter):
+        # 영숫자인지 -> isalnum()으로 사용 가능
+        if (i.isalpha() or i.isdigit()) or (i in spLetter): 
             answer += i
     
     # 3 : 연속 . 치환
@@ -21,12 +22,32 @@ def solution(new_id):
     
     # 6 : 16자 이상 처리
     if (len(answer) > 15):
-        answer = answer[0:15].rstrip('.')
+        answer = answer[:15].rstrip('.')
         
     # 7 : 2자 이하 -> 길이 3
     while(len(answer) < 3):
         answer += answer[-1]
-        
-    print(answer)
 
     return answer
+
+'''
+# 두 번째 방법 : 정규식 사용
+import re
+
+def solution(new_id):
+    answer = new_id.lower()  
+    answer = re.sub('[^a-z0-9\.\-\_]', '', answer)  # 2: 문자 제거
+    answer = re.sub('\.+', '.', answer)  # 3 : 연속 . 치환
+    answer = answer.strip('.')  
+
+    if (answer == ""):
+        answer += 'a'
+    
+    if (len(answer) > 15):
+        answer = answer[:15].rstrip('.')
+    
+    while(len(answer) < 3):
+        answer += answer[-1]
+    
+    return answer
+'''
