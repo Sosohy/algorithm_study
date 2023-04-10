@@ -4,7 +4,6 @@ def solution(dartResult):
     score = ''
     
     for i in dartResult:
-        
         if (i.isdigit()):
             score += str(i)
         elif (i in bonus):
