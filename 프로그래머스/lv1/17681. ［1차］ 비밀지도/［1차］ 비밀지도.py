@@ -1,7 +1,7 @@
 def getBinary(n, num):
     binary = ''
     
-    while(num>0):
+    while(num>0): # 이진수 - bin(num) 으로도 구할 수 있음 
         binary += str(num%2)
         num = num//2
         
@@ -25,6 +25,8 @@ def solution(n, arr1, arr2):
         answer.append(dec)
         
     return answer
+
+
 '''
 def solution(n, arr1, arr2):
     trMap = [[' ' for j in range(n)] for i in range(n)]
