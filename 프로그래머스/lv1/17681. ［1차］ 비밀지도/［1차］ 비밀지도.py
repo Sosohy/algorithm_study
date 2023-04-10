@@ -9,8 +9,23 @@ def getBinary(n, num):
         binary += '0'
         
     return binary[::-1]
-        
 
+def solution(n, arr1, arr2):
+    answer = []
+    
+    for i in range(n):
+        dec = ''
+        ar1 = getBinary(n, arr1[i])
+        ar2 = getBinary(n, arr2[i])
+        for j in range(n):
+            if(ar1[j] == '1' or ar2[j] == '1'):
+                dec += '#'
+            else:
+                dec += ' '
+        answer.append(dec)
+        
+    return answer
+'''
 def solution(n, arr1, arr2):
     trMap = [[' ' for j in range(n)] for i in range(n)]
     
@@ -26,3 +41,4 @@ def solution(n, arr1, arr2):
         answer.append(''.join(map(str, i)))
         
     return answer
+'''
