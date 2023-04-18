@@ -3,13 +3,7 @@ def solution(a, b):
     
     if(a == b): return a
 
-    first = a
-    last = b
     if(b < a):
-        first = b
-        last = a
+        a, b = b, a
         
-    for i in range(first, last+1):
-        answer += i
-        
-    return answer
+    return sum(range(a,b+1))
