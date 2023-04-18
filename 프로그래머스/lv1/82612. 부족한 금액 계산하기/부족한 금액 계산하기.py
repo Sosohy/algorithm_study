@@ -5,7 +5,5 @@ def solution(price, money, count):
         answer += price*(i+1)
 
     answer -= money 
-    if(answer < 0):
-        answer = 0
     
-    return answer
+    return max(0, answer)
