@@ -1,6 +1,5 @@
 def solution(n, words):
     answer = [0, 0]
-    turn = 1;
     
     for i in range(1, len(words)):
         word = words[i]
