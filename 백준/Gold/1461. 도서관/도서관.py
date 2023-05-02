@@ -15,43 +15,32 @@ for i in bookList:
         
 bookPlus.sort(reverse=True)
 bookMinus.sort(reverse=True)
-#print(bookPlus, bookMinus)
 
 
 book = m
 step = 0
 
 
-for i in range(len(bookMinus)):
-    s = 0
+for i in range(len(bookMinus)): #음수
     if(book == m):
-        s = bookMinus[i]
+        step += bookMinus[i]
     else:
-        s = (bookMinus[i-1] - bookMinus[i])
+        step += (bookMinus[i-1] - bookMinus[i])
 
-    step += s
-    #print(s, step)
-    
     book -= 1    
     if(book == 0) or (i == len(bookMinus)-1):
         step += bookMinus[i]
-        #print(bookMinus[i], step)
         book = m
 
-for i in range(len(bookPlus)):
-    s = 0
+for i in range(len(bookPlus)): #양수
     if(book == m):
-        s = bookPlus[i]
+        step += bookPlus[i]
     else:
-        s = (bookPlus[i-1] - bookPlus[i])
+        step += (bookPlus[i-1] - bookPlus[i])
 
-    step += s
-    #print(s, step)
-    
     book -= 1    
     if(book == 0) or (i == len(bookPlus)-1):
         step += bookPlus[i]
-        #print(bookPlus[i], step)
         book = m
 
 print(step - maxStep)
