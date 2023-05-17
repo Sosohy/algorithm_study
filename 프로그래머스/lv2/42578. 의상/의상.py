@@ -1,5 +1,3 @@
-from itertools import combinations
-
 def solution(clothes):
     answer = 1
     
@@ -11,8 +9,8 @@ def solution(clothes):
         else:
             closetDic[i[1]] = [i[0]]
             
-    for i in closetDic.keys():
-        answer *= (len(closetDic[i])+1)
-        print(i, closetDic[i])
+    for i in closetDic.values():
+        answer *= (len(i)+1)
+        print(i)
     
     return answer-1
