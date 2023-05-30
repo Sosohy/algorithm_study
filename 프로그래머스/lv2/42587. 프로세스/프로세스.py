@@ -1,10 +1,11 @@
 def solution(priorities, location):
     i = 0
+    maxP = max(priorities)
     finish = 0
     
     while finish <= len(priorities):
         while True:
-            if priorities[i] == max(priorities):
+            if priorities[i] == maxP:
                 if i == location:
                     return finish + 1
                 break
@@ -13,5 +14,6 @@ def solution(priorities, location):
 
         finish += 1
         priorities[i] = -1
+        maxP = max(priorities)
 
     return len(priorities)
