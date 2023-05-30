@@ -1,9 +1,9 @@
 def solution(priorities, location):
     work = 0
     i = 0
-    finish = []
+    finish = 0
     
-    while len(finish) <= len(priorities):
+    while finish <= len(priorities):
         while True:
             start = work
             if (priorities[work] < priorities[i]):
@@ -12,11 +12,11 @@ def solution(priorities, location):
                 i = (i+1) % len(priorities)
             
             if (i == start): break
-                   
-        finish.append(work)
+
+        finish += 1
         priorities[work] = -1
         
         if(work == location):
-            return len(finish)
-    
+            return finish
+
     return len(priorities)
