@@ -5,13 +5,12 @@ def solution(priorities, location):
     
     while finish <= len(priorities):
         while True:
-            start = work
             if (priorities[work] < priorities[i]):
                 work = i
             else:
                 i = (i+1) % len(priorities)
             
-            if (i == start): break
+            if priorities[work] == max(priorities): break
 
         finish += 1
         priorities[work] = -1
