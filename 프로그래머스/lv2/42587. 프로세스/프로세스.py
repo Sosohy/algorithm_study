@@ -1,28 +1,22 @@
-from collections import deque
-
 def solution(priorities, location):
-    priorities = list(zip(priorities, range(len(priorities))))
+    work = 0
+    i = 0
+    finish = []
     
-    process = priorities[location]
-    q = deque(priorities)
-    cnt = 0
-    
-    while q:
-        m_idx = 0
-
-        for i in range(len(q)):
-            if q[m_idx][0] < q[i][0]: m_idx = i
+    while len(finish) <= len(priorities):
+        while True:
+            start = work
+            if (priorities[work] < priorities[i]):
+                work = i
+            else:
+                i = (i+1) % len(priorities)
             
-        print(q, m_idx, q[m_idx])
-
-        if q[m_idx][1] == process[1]:
-            if q[m_idx][1]!=location: cnt += q.index(process)
-            return cnt + 1
-
-        for j in range(m_idx):
-            q.append(q.popleft())
-
-        p = q.popleft()
-        cnt += 1
-
-    return cnt
+            if (i == start): break
+                   
+        finish.append(work)
+        priorities[work] = -1
+        
+        if(work == location):
+            return len(finish)
+    
+    return len(priorities)
