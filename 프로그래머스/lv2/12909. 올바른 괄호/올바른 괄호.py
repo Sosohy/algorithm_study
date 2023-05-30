@@ -6,10 +6,10 @@ def solution(s):
         if i == '(':
             sList.append(i)
         else:
-            if(sList):
-                sList.pop()
-            else:
+            if not sList:
                 return False
+            else:
+                sList.pop()
                 
     if (sList):
         answer = False
