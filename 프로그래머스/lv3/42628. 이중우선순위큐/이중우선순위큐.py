@@ -9,7 +9,7 @@ def solution(operations):
         
         if tmp[0] == 'I':
             heapq.heappush(cal, int(tmp[1]))
-        elif tmp[0] == 'D' and cal:
+        elif cal:
             if (tmp[1] == '-1'):
                 heapq.heappop(cal)
             else:
