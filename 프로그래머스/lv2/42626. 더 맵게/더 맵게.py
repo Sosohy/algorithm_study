@@ -3,9 +3,6 @@ import heapq
 def solution(scoville, K):
     answer = 0
     
-    if K == 0:
-        return 0
-    
     heapq.heapify(scoville)
     scoMin = heapq.heappop(scoville)
     
