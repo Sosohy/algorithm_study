@@ -1,7 +1,7 @@
 def solution(n):
     answer = []
     triList = [[0]*n for i in range(n)]
-    x, y = -0, -1
+    x, y = 0, -1
     num = 1
     
     for i in range(n): # n번 반복 -> 3마다 아래 오른쪽 위 순서로 반복
