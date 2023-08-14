@@ -5,20 +5,19 @@ def solution(s):
     
     for i in range(len(s)):
         stack = []
-        #isPair = True
+        isPair = True
         
         for j in sList:
             if(j in ['(', '[', '{']):
                 stack.append(j)
             else:
                 if (not stack) or (stack[-1] != dic[j]):
-                    #isPair = False
-                    stack.append(j)
+                    isPair = False
                     break
                 else:
                     stack.pop()
                     
-        if(not stack): # and isPair:
+        if(not stack) and isPair:
             answer += 1
         sList.append(sList.pop(0))
 
