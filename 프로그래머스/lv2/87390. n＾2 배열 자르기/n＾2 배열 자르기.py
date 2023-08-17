@@ -10,18 +10,6 @@ def solution(n, left, right):
             answer.append(lidx+1)
         left += 1
         
-        '''
-        if(lidx < left//n):
-            for i in range(lidx, (left//n)):
-                answer.append((left//n)+1)
-            left += (left//n)-lidx
-        else:
-            for i in range(lidx, n):
-                answer.append(i+1)
-            left += n-lidx
-        '''
-        
-            
     #print(answer)
     
     return answer
