@@ -7,10 +7,7 @@ def solution(n, k):
         num += str(n%k)
         n //= k
     
-    num = list(num)
-    num.reverse()
-    num = ''.join(num)
-    
+    num = num[::-1]
     spList = num.split('0')
 
     for i in spList:
