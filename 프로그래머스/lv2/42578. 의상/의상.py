@@ -10,7 +10,7 @@ def solution(clothes):
             closetDic[i[1]] = [i[0]]
             
     for i in closetDic.values():
-        answer *= (len(i)+1)
+        answer *= (len(i)+1) #카테고리 개수 + 안입는 경우의 수(1)
         print(i)
     
     return answer-1
