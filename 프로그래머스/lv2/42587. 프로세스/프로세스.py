@@ -11,7 +11,7 @@ def solution(priorities, location):
                 break
             else:
                 i = (i+1) % len(priorities)
-
+        print(i)
         finish += 1
         priorities[i] = -1
         maxP = max(priorities)
