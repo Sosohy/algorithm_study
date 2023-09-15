@@ -1,13 +1,8 @@
 import heapq
 def solution(n, works):
     answer = 0
-    wh = []
-    #[-i for i in works]
-    #heapq.heapify(wh)
-    
-    for i in works:
-        heapq.heappush(wh, -i)
-    
+    wh = [-i for i in works]
+    heapq.heapify(wh)
     
     for i in range(n):
         w = heapq.heappop(wh) + 1
