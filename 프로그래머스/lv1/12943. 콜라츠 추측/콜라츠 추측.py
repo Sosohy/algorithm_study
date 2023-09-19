@@ -1,3 +1,21 @@
+#DFS로 푼거
+def DFS(i, num):
+    if(500 < i):
+        return -1
+    elif(num == 1):
+        return i
+    else:
+        if(num%2 == 0):
+            return DFS(i+1, num//2)
+        else:
+            return DFS(i+1, (num*3)+1)
+    
+def solution(num):
+    answer = DFS(0, num)
+    return answer
+
+'''
+#그냥 푼거
 def solution(num):
     answer = 0
     
@@ -11,3 +29,4 @@ def solution(num):
             num = num*3 + 1
         
     return answer
+'''
