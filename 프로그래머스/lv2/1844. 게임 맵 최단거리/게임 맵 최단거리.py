@@ -11,10 +11,12 @@ def solution(maps):
         x, y, dist = queue.popleft()
         
         for i in range(4):
-            dx, dy = dirList[i]
-            if (0 <= dx+x < len(maps)) and (0 <= dy+y < len(maps[0])) and maps[dx+x][dy+y] == 1:
-                if game[dx+x][dy+y] == -1 or (dist+1 < game[dx+x][dy+y]):
-                    game[dx+x][dy+y] = dist+1
-                    queue.append((dx+x, dy+y, dist+1))
+            dx = dirList[i][0] + x
+            dy = dirList[i][1] + y
+            
+            if (0 <= dx < len(maps)) and (0 <= dy < len(maps[0])) and maps[dx][dy] == 1:
+                if game[dx][dy] == -1 or (dist+1 < game[dx][dy]):
+                    game[dx][dy] = dist+1
+                    queue.append((dx, dy, dist+1))
     
     return game[len(maps)-1][len(maps[0])-1]
