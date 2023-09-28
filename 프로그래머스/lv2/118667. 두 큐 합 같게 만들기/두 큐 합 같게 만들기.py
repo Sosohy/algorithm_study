@@ -12,7 +12,7 @@ def solution(queue1, queue2):
     elif t1 == t2: #이미 같은 경우
         return answer
 
-    while answer <= (len(queue1)*2)*2:
+    while answer < (len(queue1)*2)*2:
         if(t1>t2):
             tmp = q1.popleft()
             q2.append(tmp)
