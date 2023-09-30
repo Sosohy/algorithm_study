@@ -1,7 +1,8 @@
 from collections import deque
 def solution(cacheSize, cities):
     answer = 0
-    cache = deque()
+    cache = deque() 
+    #deque(maxlen=cacheSize) 이걸로 쓰면 (len(cache) >= cacheSize) 이 부분 안해줘도 됨!
     
     if cacheSize == 0:
         return len(cities)*5
