@@ -8,23 +8,16 @@ def solution(cacheSize, cities):
     
     for i in cities:
         city = i.upper()
-        if(len(cache) < cacheSize):
-            if city in cache:
+        
+        if city in cache: # cache hit
                 cache.remove(city)
                 cache.append(city)
                 answer += 1
-            else:
-                cache.append(city)
-                answer += 5
-        else:
-            if city in cache:
-                cache.remove(city)
-                cache.append(city)
-                answer += 1
-            else:
+        else: # cache miss
+            if(len(cache) >= cacheSize): #캐시 크기보다 큰 경우 -> 제일 오래된 도시 pop
                 if(cache):
                     cache.popleft()
-                cache.append(city)
-                answer += 5
-        
+            cache.append(city)
+            answer += 5
+
     return answer
