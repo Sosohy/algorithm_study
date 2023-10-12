@@ -19,7 +19,6 @@ def solution(n, s, a, b, fares):
                     
     a, b, s = a-1, b-1, s-1
     for k in range(n):
-        if(answer > fare[s][k]+fare[k][a]+fare[k][b]):
-            answer = fare[s][k]+fare[k][a]+fare[k][b]
+        answer = min(answer, fare[s][k]+fare[k][a]+fare[k][b])
 
     return answer
