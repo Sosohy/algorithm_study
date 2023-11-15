@@ -1,14 +1,13 @@
 def solution(numbers):
     if(sum(numbers) == 0): return '0'
     answer = ''
-    numbersList = [str(i) for i in numbers]
-    n = []
+    nList = [str(i) for i in numbers]
     
-    for i in numbersList:
-        n.append(i*3)
-    n.sort(reverse=True)
+    for i in range(len(nList)):
+        nList[i] = nList[i]*3
+    nList.sort(reverse=True)
     
-    for i in n:
+    for i in nList:
         tmp = len(i)//3
         answer += i[:tmp]
     
