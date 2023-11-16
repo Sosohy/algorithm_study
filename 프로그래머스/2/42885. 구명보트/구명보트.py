@@ -1,16 +1,15 @@
-from collections import deque
-
 def solution(people, limit):
+    people = sorted(people, reverse=True)
+    small = len(people)-1
     answer = 0
-    people = deque(sorted(people))
-    
-    while(len(people) > 1):
-        s = people.pop()
-        if s+people[0] <= limit:
-            s += people.popleft()
-        answer += 1
+
+    for i in range(len(people)):
+        if i > small:
+            break
         
-    if(people):
-        answer += 1
-        
+        if people[i]+people[small]>limit: answer += 1
+        else:
+            small -= 1
+            answer += 1
+
     return answer
