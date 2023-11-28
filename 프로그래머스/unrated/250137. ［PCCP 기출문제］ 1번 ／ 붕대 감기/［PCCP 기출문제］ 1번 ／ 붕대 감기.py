@@ -1,6 +1,5 @@
 def solution(bandage, health, attacks):
-    answer = 0
-    skillT, time = 0, 0
+    time = 0
     char = health
     
     for at, damage in attacks:
