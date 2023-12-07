@@ -1,7 +1,7 @@
 def solution(msg):
     answer = []
-    base = list("-ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    msg = list(msg.upper())
+    base = list("-ABCDEFGHIJKLMNOPQRSTUVWXYZ") # dict()으로 만들어서 풀어도 O
+    msg = list(msg)
     
     while(msg):
         tmp = msg.pop(0)
