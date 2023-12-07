@@ -1,6 +1,6 @@
 def solution(msg):
     answer = []
-    base = list("0ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    base = list("-ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     msg = list(msg.upper())
     
     while(msg):
