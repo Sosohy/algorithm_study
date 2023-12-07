@@ -3,7 +3,7 @@ def solution(msg):
     a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     base = {k:v for (k, v) in zip(a, list(range(1, 27)))}
     msg = list(msg)
-    idx = 27
+    idx = len(a)+1
     
     while(msg):
         tmp = msg.pop(0)
