@@ -1,6 +1,6 @@
 # [level 1] [PCCE 기출문제] 9번 / 이웃한 칸 - 250125 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250125) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250125?language=python3) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 06월 28일 15:08:18
+2024년 06월 28일 15:13:07
 
 ### 문제 설명
 
