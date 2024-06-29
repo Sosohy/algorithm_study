@@ -2,8 +2,8 @@ def solution(data, ext, val_ext, sort_by):
     answer = []
     order = ["code", "date", "maximum", "remain"]
     
+    extIdx = order.index(ext)
     for i in data:
-        extIdx = order.index(ext)
         if(i[extIdx] < val_ext):
             answer.append(i)
     
