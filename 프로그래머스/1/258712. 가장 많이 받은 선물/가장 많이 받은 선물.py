@@ -22,7 +22,7 @@ def solution(friends, gifts):
         for j in range(i+1, len(friends)):
             b = friends[j]
             
-            # 서로 주고 받은 선물 갯수 비교
+            # 서로 주고 받은 선물 개수 비교
             p1 = history[a][b] if b in history[a] else 0
             p2 = history[b][a] if a in history[b] else 0
             
@@ -30,7 +30,7 @@ def solution(friends, gifts):
                 present[a] += 1
             elif(p1 < p2):
                 present[b] += 1
-            else: # 주고 받은 갯수 같은 경우, 선물 지수 비교
+            else: # 주고 받은 개수 같은 경우, 선물 지수 비교
                 aIdx, bIdx = index[a], index[b]
                 if(aIdx > bIdx): present[a] += 1
                 elif(aIdx < bIdx): present[b] += 1
