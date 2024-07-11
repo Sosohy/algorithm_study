@@ -1,12 +1,9 @@
+from collections import Counter
+
 def solution(topping):
     answer = 0
-    chulDic = {}
+    chulDic = Counter(topping)
     broDic = {}
-    
-    for i in topping:
-        if(i not in chulDic):
-            chulDic[i] = 0
-        chulDic[i] += 1
     
     for i in topping:
         if(i not in broDic):
