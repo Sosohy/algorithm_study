@@ -5,6 +5,8 @@ def solution(order):
     
     for i in range(1, len(order) + 1):
         asBelt.append(i)
+        if(asBelt[-1] > order[idx]):
+            return answer
         while (asBelt and asBelt[-1] == order[idx]):
             asBelt.pop()
             answer += 1
