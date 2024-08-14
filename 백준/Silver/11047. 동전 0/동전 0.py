@@ -1,15 +1,12 @@
 n, k = map(int, input().split())
-coins = [int(input()) for x in range(n)]
-coins.sort(reverse=True)
+coinList = [int(input()) for i in range(n)]
 
-ans = 0
+cnt = 0
 
-for i in coins:
-    if(k%i != k):
-        ans += k//i
-        k = k%i
-        
-    if(k == 0):
-        break
+coinList.sort(reverse = True)
 
-print(ans)
+for i in coinList:
+    cnt += k//i
+    k = k%i
+
+print(cnt)
