@@ -6,14 +6,10 @@ def per(nList, idx):
     if(idx >= m):
         print(" ".join(list(map(str, nList))))
     else:
-        for i in range(1, n+1):
-            if(idx == 0):
-                nList[idx] = i
-                per(nList, idx+1)
-                nList[idx] = 0
-            elif(nList[idx-1] <= i):
-                nList[idx] = i
-                per(nList, idx+1)
-                nList[idx] = 0
+        s = 1 if idx == 0 else nList[idx-1]
+        for i in range(s, n+1):
+            nList[idx] = i
+            per(nList, idx+1)
+            nList[idx] = 0
 
 per(selected, 0)
