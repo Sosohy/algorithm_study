@@ -1,26 +1,14 @@
 def solution(ingredient):
     answer = 0
-    tmp = []
-    recipe = [1, 2, 3, 1]
     
-    for i in ingredient:
-        tmp.append(i)
-        if(tmp[-4:] == recipe):
+    if(len(ingredient) < 4): return 0
+
+    ham = ingredient[:3]
+    
+    for i in range(3, len(ingredient)):
+        ham.append(ingredient[i])
+        if(ham[-4:] == [1, 2, 3, 1]):
             answer += 1
-            for i in range(4):
-                tmp.pop()
-        
+            del ham[-4:]
+    
     return answer
-
-'''
-def solution(ingredient):
-    answer = 0
-    tmp = "".join(map(str, ingredient))
-    recipe = "1231"
-
-    while(recipe in tmp):
-        tmp = tmp.replace(recipe,"", 1)
-        answer += 1
-        
-    return answer
-'''
