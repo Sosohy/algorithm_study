@@ -1,17 +1,18 @@
 def solution(participant, completion):
     answer = ''
-    m = {}
+    dic = {}
     
     for i in participant:
-        if(i not in m):
-            m[i] = 0
-        m[i] += 1
-    
+        if(i not in dic):
+            dic[i] = 0
+        dic[i] += 1
+        
     for i in completion:
-        m[i] -= 1
+        dic[i] -= 1
     
-    for k, v in m.items():
-        if(m[k] != 0):
-            return k
+    keys = list(dic.keys())
+    for i in keys:
+        if(dic[i] != 0):
+            answer = i
     
     return answer
