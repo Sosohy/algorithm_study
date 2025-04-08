@@ -1,6 +1,7 @@
 def solution(nums):
+    answer = 0
+    t = len(set(nums))
     
-    typeList = set(nums)
-    answer = min(len(typeList), len(nums)//2)
+    answer = min(t, len(nums)//2)
     
     return answer
