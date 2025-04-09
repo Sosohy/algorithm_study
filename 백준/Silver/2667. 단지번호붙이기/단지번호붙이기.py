@@ -1,38 +1,38 @@
 from collections import deque
 
 n = int(input())
-town = [list(map(int, input())) for i in range(n)]
+comp = [input() for i in range(n)]
+visited = [[-1]*n for i in range(n)]
+num = []
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
-com = []
-c = 1
-
-def bfs(s):
-    queue = deque([s])
-    town[s[0]][s[1]] = 0
+def bfs(sx, sy):
+    q = deque()
+    q.append((sx, sy))
+    visited[sx][sy] = 1
+    pos = [(1, 0),(-1, 0), (0, 1), (0, -1)]
     cnt = 1
 
-    while queue:
-        q = queue.popleft()
-        
-        for i in range(4):
-            nx = q[0] + dx[i]
-            ny = q[1] + dy[i]
+    while(q):
+        x, y = q.popleft()
 
-            if (0 <= nx < n) and (0 <= ny < n) and town[nx][ny] == 1:
-                town[nx][ny] = 3
+        for k in range(4):
+            nx = x+pos[k][0]
+            ny = y+pos[k][1]
+
+            if(0 <= nx < n and 0 <= ny < n and comp[nx][ny] == '1' and visited[nx][ny] == -1):
+                visited[nx][ny] = 1
                 cnt += 1
-                queue.append([nx, ny])
-
+                q.append((nx, ny))
+    
     return cnt
 
 for i in range(n):
     for j in range(n):
-        if (town[i][j] == 1):
-            com.append(bfs([i, j]))
+        if(comp[i][j] == '1' and visited[i][j] == -1):
+            num.append(bfs(i, j))
 
-print(len(com))
-for i in sorted(com):
-    print(i)
+print(len(num))
+
+num.sort()
+for i in range(len(num)):
+    print(num[i])            
