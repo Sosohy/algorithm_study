@@ -1,33 +1,29 @@
 from collections import deque
 
-n = int(input())
-m = int(input())
-graph = [[0]*(n+1) for i in range(n+1)]
-visited = [0]*(n+1)
+n = int(input()) + 1
+com = [[0]*n for i in range(n)]
 
-for i in range(m):
-    c1, c2 = map(int, input().split())
-    graph[c1][c2] = 1
-    graph[c2][c1] = 1
+for i in range(int(input())):
+    s, e = map(int, input().split())
+    com[s][e] = 1
+    com[e][s] = 1
 
-def dfs(v):
-    visited[v] = 1
+def bfs(t):
+    answer = 0
+    visited = [0]*n
+    visited[t] = 1
 
-    for i in range(1, n+1):
-        if graph[v][i] == 1 and visited[i] == 0:
-            dfs(i)
+    vir = deque()
+    vir.append(t)
 
-def bfs(v):
-    queue = deque([v])
-    visited[v] = 1
-
-    while queue:
-        v = queue.popleft()
-        
-        for i in range(1, n+1):
-            if graph[v][i] == 1 and visited[i] == 0:
+    while(vir):
+        m = vir.popleft()
+        for i in range(1, n):
+            if(com[m][i] == 1 and visited[i] == 0):
+                vir.append(i)
                 visited[i] = 1
-                queue.append(i)
+                answer += 1
 
-bfs(1)
-print(visited.count(1) - 1)
+    return answer
+
+print(bfs(1))
