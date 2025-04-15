@@ -11,7 +11,4 @@ def solution(s):
             else:
                 return False
     
-    if(len(stack) > 0):
-        return False
-    
-    return True
+    return len(stack) == 0
