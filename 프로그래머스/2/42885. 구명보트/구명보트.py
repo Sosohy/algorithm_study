@@ -1,15 +1,15 @@
 def solution(people, limit):
-    people = sorted(people, reverse=True)
-    small = len(people)-1
     answer = 0
-
-    for i in range(len(people)):
-        if i > small:
-            break
+    people.sort()
+    s, e = 0, len(people)-1
+    
+    while(s <= e):
+        answer += 1
         
-        if people[i]+people[small]>limit: answer += 1
+        if(people[s]+people[e] <= limit):
+            s += 1
+            e -= 1
         else:
-            small -= 1
-            answer += 1
-
+            e -= 1
+    
     return answer
