@@ -1,20 +1,19 @@
 def solution(k, tangerine):
     answer = 0
-    typeDic = {}
+    dic = {}
     
     for i in tangerine:
-        if(i not in typeDic):
-            typeDic[i] = 0
-        typeDic[i] += 1
+        if(i not in dic):
+            dic[i] = 0
+        dic[i] += 1
     
-    values = list(typeDic.values())
-    values.sort(reverse=True)
+    dic = dict(sorted(dic.items(), key=lambda x:x[1], reverse=True))
     
-    for i in values:
-        if(k <= 0):
-            return answer
-        
+    s = 0
+    for i in dic.keys():
         answer += 1
-        k -= i
-        
+        s += dic[i]
+        if(s >= k):
+            return answer
+    
     return answer
